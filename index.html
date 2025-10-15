@@ -5,187 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mariscos del Mar</title>
 <style>
-/* ---------- ESTILOS GENERALES ---------- */
-body { 
-  font-family: Arial, sans-serif; 
-  margin:0; 
-  padding:18px; 
-  background:#f2f2f2; 
-  min-height:100vh; 
-  display:flex; 
-  justify-content:center; 
-  align-items:flex-start; 
-}
-
-.container { 
-  background:white; 
-  padding:30px 40px; 
-  border-radius:15px; 
-  box-shadow:0 5px 20px rgba(0,0,0,0.2); 
-  width:95%; 
-  max-width:1100px; 
-  text-align:center; 
-  margin-top:20px; 
-}
-
-/* LOGO */
-img.logo { 
-  width:100px; 
-  height:100px; 
-  border-radius:50%; 
-  margin-bottom:15px; 
-  object-fit:cover; 
-  border:3px solid #0077b6; 
-  transition: transform 0.3s ease-in-out; 
-}
-img.logo:hover { 
-  transform: scale(1.2); 
-}
-
-h2 { 
-  margin-bottom:25px; 
-  color:#0077b6; 
-  padding:5px 0; 
-}
-
-input, select, textarea, button { 
-  width:100%; 
-  padding:12px; 
-  margin-bottom:15px; 
-  border-radius:8px; 
-  box-sizing:border-box; 
-  font-size:1rem;
-}
-
-button { 
-  background:#0077b6; 
-  color:white; 
-  border:none; 
-  cursor:pointer; 
-  font-weight:bold; 
-  transition: background 0.3s, transform 0.2s; 
-}
-button:hover { 
-  background:#0096c7; 
-  transform: scale(1.05); 
-}
-
-.table-container { 
-  width:100%; 
-  max-height:80vh; 
-  overflow-y:auto; 
-  padding:20px; 
-  margin-top:20px; 
-}
-
-.table-wrapper { 
-  width:100%; 
-  overflow-x:auto; 
-}
-
-table { 
-  width:100%; 
-  border-collapse:collapse; 
-  table-layout:auto; 
-}
-
-th, td { 
-  border-bottom:1px solid #ccc; 
-  padding:10px; 
-  text-align:center;
-  word-wrap:break-word; 
-}
-
-th { 
-  color:#0077b6; 
-}
-
-.action-btn { 
-  padding:8px 12px; 
-  border-radius:6px; 
-  background:#0077b6; 
-  color:white; 
-  cursor:pointer; 
-  font-size:0.9em; 
-  margin:2px; 
-  transition: all 0.2s; 
-}
-.action-btn:hover { 
-  background:#0096c7; 
-  transform: scale(1.05); 
-}
-
-/* PLATILLOS */
-.platillo-item { 
-  display:flex; 
-  justify-content:space-between; 
-  align-items:center; 
-  border:1px solid #ccc; 
-  padding:12px; 
-  margin-bottom:12px; 
-  border-radius:10px; 
-  flex-wrap:wrap;
-}
-
-.platillo-info { 
-  flex:2; 
-  min-width:200px; 
-  text-align:left; 
-}
-
-.platillo-actions { 
-  display:flex; 
-  align-items:center; 
-  gap:10px; 
-}
-
-.platillo-actions input { 
-  width:60px; 
-  padding:6px; 
-}
-
-.category-title { 
-  text-align:left; 
-  font-weight:bold; 
-  margin-top:20px; 
-  color:#0077b6; 
-  font-size:1.2rem; 
-  border-bottom:1px dashed #0077b6; 
-  padding-bottom:5px; 
-}
-
-/* REALIZAR PEDIDO MÁS ANCHO */
-.realizar-pedido-container { 
-  width:100%; 
-  max-width:1100px; 
-  padding:25px; 
-  margin:auto; 
-  background:white; 
-  border-radius:15px; 
-  box-shadow:0 5px 20px rgba(0,0,0,0.2); 
-  text-align:center; 
-  max-height:80vh; 
-  overflow-y:auto; 
-}
-
-/* MEDIA QUERIES RESPONSIVE */
-@media (max-width:1000px){ 
-  .container, .realizar-pedido-container { padding:20px; }
-  table { font-size:0.95rem; }
-}
-@media (max-width:700px){ 
-  body{padding:12px;} 
-  img.logo{width:86px;height:86px;} 
-  h2{font-size:1.2rem;} 
-  table{font-size:0.85rem;} 
-}
-@media (max-width:480px){ 
-  img.logo{width:72px;height:72px;} 
-  h2{font-size:1.05rem;} 
-  table{font-size:0.75rem;} 
-  .platillo-item{flex-direction:column;align-items:flex-start;} 
-  .platillo-actions{flex-direction:row;justify-content:space-between;width:100%;}
-}
+body { font-family: Arial, sans-serif; margin:0; padding:18px; background:#f2f2f2; min-height:100vh; display:flex; justify-content:center; align-items:flex-start;}
+.container { background:white; padding:30px 40px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.2); width:95%; max-width:1100px; text-align:center; margin-top:20px;}
+img.logo { width:100px; height:100px; border-radius:50%; margin-bottom:15px; object-fit:cover; border:3px solid #0077b6; transition: transform 0.3s ease-in-out;}
+img.logo:hover { transform: scale(1.2);}
+h2 { margin-bottom:25px; color:#0077b6; padding:5px 0;}
+input, select, textarea, button { width:100%; padding:12px; margin-bottom:15px; border-radius:8px; box-sizing:border-box; font-size:1rem;}
+button { background:#0077b6; color:white; border:none; cursor:pointer; font-weight:bold; transition: background 0.3s, transform 0.2s;}
+button:hover { background:#0096c7; transform: scale(1.05);}
+.table-container { width:100%; max-height:80vh; overflow-y:auto; padding:20px; margin-top:20px;}
+.table-wrapper { width:100%; overflow-x:auto;}
+table { width:100%; border-collapse:collapse; table-layout:auto;}
+th, td { border-bottom:1px solid #ccc; padding:10px; text-align:center; word-wrap:break-word;}
+th { color:#0077b6;}
+.action-btn { padding:8px 12px; border-radius:6px; background:#0077b6; color:white; cursor:pointer; font-size:0.9em; margin:2px; transition: all 0.2s;}
+.action-btn:hover { background:#0096c7; transform: scale(1.05);}
+.platillo-item { display:flex; justify-content:space-between; align-items:center; border:1px solid #ccc; padding:12px; margin-bottom:12px; border-radius:10px; flex-wrap:wrap;}
+.platillo-info { flex:2; min-width:200px; text-align:left;}
+.platillo-actions { display:flex; align-items:center; gap:10px;}
+.platillo-actions input { width:60px; padding:6px;}
+.category-title { text-align:left; font-weight:bold; margin-top:20px; color:#0077b6; font-size:1.2rem; border-bottom:1px dashed #0077b6; padding-bottom:5px;}
+.realizar-pedido-container { width:100%; max-width:1100px; padding:25px; margin:auto; background:white; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.2); text-align:center; max-height:80vh; overflow-y:auto;}
+@media (max-width:1000px){ .container, .realizar-pedido-container { padding:20px;} table { font-size:0.95rem; }}
+@media (max-width:700px){ body{padding:12px;} img.logo{width:86px;height:86px;} h2{font-size:1.2rem;} table{font-size:0.85rem;}}
+@media (max-width:480px){ img.logo{width:72px;height:72px;} h2{font-size:1.05rem;} table{font-size:0.75rem;} .platillo-item{flex-direction:column;align-items:flex-start;} .platillo-actions{flex-direction:row;justify-content:space-between;width:100%;}}
 </style>
 </head>
 <body>
@@ -198,7 +41,7 @@ let platillos=[];
 let pedidos=[]; 
 let empleadoActual=null;
 
-// --------- LOGIN ---------
+// ---------- LOGIN ----------
 function renderLogin(){
     app.innerHTML=`<div class="container">
         <img class="logo" src="img/logo.png">
@@ -216,7 +59,7 @@ function login(){
     else alert("Usuario o contraseña incorrecta");
 }
 
-// --------- MENUS ---------
+// ---------- MENUS ----------
 function renderAdminMenu(){
     app.innerHTML=`<div class="container">
         <img class="logo" src="img/logo.png">
@@ -226,6 +69,7 @@ function renderAdminMenu(){
         <button onclick="renderRegistrarPlatillo()">Registrar Platillo</button>
         <button onclick="renderListaPlatillos()">Lista de Platillos</button>
         <button onclick="renderListaPedidos()">Pedidos Realizados</button>
+        <button onclick="renderReporteVentas()">Reporte de Ventas</button>
         <button onclick="renderLogin()">Cerrar Sesión</button>
     </div>`;
 }
@@ -239,7 +83,7 @@ function renderEmpleadoMenu(){
     </div>`;
 }
 
-// --------- PERSONAL ---------
+// ---------- PERSONAL ----------
 function renderRegistrarPersonal(){
     app.innerHTML=`<div class="container">
         <img class="logo" src="img/logo.png">
@@ -325,7 +169,7 @@ function guardarEdicionPersonal(i){
 }
 function eliminarPersonal(i){if(confirm("¿Desea eliminar este registro?")){personal.splice(i,1);renderListaPersonal();}}
 
-// --------- PLATILLOS ---------
+// ---------- PLATILLOS ----------
 function renderRegistrarPlatillo(){
     app.innerHTML=`<div class="container">
         <img class="logo" src="img/logo.png">
@@ -398,7 +242,7 @@ function guardarEdicionPlatillo(i){
 }
 function eliminarPlatillo(i){if(confirm("¿Desea eliminar este platillo?")){platillos.splice(i,1);renderListaPlatillos();}}
 
-// --------- REALIZAR PEDIDO (EMPLEADO) ----------
+// ---------- REALIZAR PEDIDO ----------
 function renderRealizarPedido(){
     if(platillos.length===0){alert("No hay platillos registrados."); renderEmpleadoMenu(); return;}
     const categorias=['Bebidas','Barra Fría','Barra Caliente'];
@@ -442,13 +286,46 @@ function confirmarPedido(){
     }
 }
 
+// ---------- REPORTE DE VENTAS ----------
+function renderReporteVentas(){
+    let filas = pedidos.length > 0
+        ? pedidos.map(p=>{
+            return `<tr>
+                <td>${p.fecha}</td>
+                <td>${p.items.map(it=>it.nombre+' x'+it.cantidad).join(', ')}</td>
+                <td>$${p.total}</td>
+            </tr>`;
+        }).join('')
+        : `<tr><td colspan="3">No hay ventas registradas</td></tr>`;
+
+    let totalGeneral = pedidos.reduce((acc,p)=>acc+p.total,0);
+
+    app.innerHTML=`<div class="table-container">
+        <img class="logo" src="img/logo.png">
+        <h2>Reporte de Ventas</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Fecha</th><th>Platillos Vendidos</th><th>Total</th></tr></thead>
+                <tbody>${filas}</tbody>
+            </table>
+        </div>
+        <h3>Total General Vendido: $${totalGeneral}</h3>
+        <button onclick="renderAdminMenu()">Volver</button>
+    </div>`;
+}
+
 // ---------- LISTA DE PEDIDOS ----------
 function renderListaPedidos(){
-    let filas=pedidos.length>0?pedidos.map((p,i)=>`<tr>
-        <td>${p.mesa}</td><td>${p.empleado}</td><td>${p.items.map(it=>it.nombre+' x'+it.cantidad).join(', ')}</td>
-        <td>$${p.total}</td><td>${p.fecha}</td>
-    </tr>`).join(''):`<tr><td colspan="5">No hay pedidos registrados</td></tr>`;
-    app.innerHTML=`<div class="table-container">
+    let filas = pedidos.length > 0
+        ? pedidos.map((p,i)=>`<tr>
+            <td>${p.mesa}</td>
+            <td>${p.empleado}</td>
+            <td>${p.items.map(it=>it.nombre+' x'+it.cantidad).join(', ')}</td>
+            <td>$${p.total}</td>
+            <td>${p.fecha}</td>
+          </tr>`).join('')
+        : `<tr><td colspan="5">No hay pedidos registrados</td></tr>`;
+    app.innerHTML = `<div class="table-container">
         <img class="logo" src="img/logo.png">
         <h2>Pedidos Realizados</h2>
         <div class="table-wrapper">
