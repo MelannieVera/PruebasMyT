@@ -68,6 +68,7 @@ function renderAdminMenu(){
         <button onclick="renderListaPersonal()">Lista de Personal</button>
         <button onclick="renderRegistrarPlatillo()">Registrar Platillo</button>
         <button onclick="renderListaPlatillos()">Lista de Platillos</button>
+        <button onclick="renderRealizarPedido()">Realizar Pedido</button>
         <button onclick="renderListaPedidos()">Pedidos Realizados</button>
         <button onclick="renderReporteVentas()">Reporte de Ventas</button>
         <button onclick="renderLogin()">Cerrar Sesión</button>
@@ -244,7 +245,7 @@ function eliminarPlatillo(i){if(confirm("¿Desea eliminar este platillo?")){plat
 
 // ---------- REALIZAR PEDIDO ----------
 function renderRealizarPedido(){
-    if(platillos.length===0){alert("No hay platillos registrados."); renderEmpleadoMenu(); return;}
+    if(platillos.length===0){alert("No hay platillos registrados."); if(empleadoActual){renderEmpleadoMenu();} else {renderAdminMenu();} return;}
     const categorias=['Bebidas','Barra Fría','Barra Caliente'];
     let listaHTML='';
     categorias.forEach(cat=>{
@@ -268,7 +269,7 @@ function renderRealizarPedido(){
         <input type="text" id="mesa-num" placeholder="Número de Mesa">
         ${listaHTML}
         <button onclick="confirmarPedido()">Agregar Pedido</button>
-        <button onclick="renderEmpleadoMenu()">Volver</button>
+        <button onclick="${empleadoActual?'renderEmpleadoMenu()':'renderAdminMenu()'}">Volver</button>
     </div>`;
 }
 function confirmarPedido(){
@@ -282,7 +283,7 @@ function confirmarPedido(){
     if(items.length===0){alert("Seleccione al menos un platillo."); return;}
     if(confirm(`Total del pedido: $${total}. ¿Desea confirmar el pedido?`)){
         pedidos.push({mesa,empleado:empleadoActual||'admin',items,total,fecha:new Date().toLocaleString()});
-        alert("Pedido registrado"); renderEmpleadoMenu();
+        alert("Pedido registrado"); if(empleadoActual){renderEmpleadoMenu();} else {renderAdminMenu();}
     }
 }
 
